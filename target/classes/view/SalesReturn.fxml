@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1700.0" style="-fx-background-image: url(/view/image/MainBack.png);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SalesReturnController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-radius: 20, 20; -fx-background-image: url(/view/image/Rectangle.png);" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="15.0" height="5.0" layoutX="22.0" layoutY="105.0" stroke="BLACK" strokeType="OUTSIDE" style="-fx-arc-height: 10;" width="1534.0" />
+            <Label layoutX="502.0" layoutY="-13.0" styleClass="MainTitel" stylesheets="@../Style/d.css" text="SALES RETURN">
+               <font>
+                  <Font size="90.0" />
+               </font>
+            </Label>
+            <JFXButton blendMode="SRC_ATOP" layoutX="31.0" layoutY="10.0" onAction="#btnBackAction" prefHeight="0.0" prefWidth="0.0">
+               <graphic>
+                  <ImageView fitHeight="84.0" fitWidth="84.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image/backToPrePage.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <AnchorPane layoutX="43.0" layoutY="136.0">
+               <children>
+                  <Label layoutX="1.0" layoutY="35.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="200.0" text="Order ID :">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="fldOrderID" layoutX="126.0" layoutY="35.0" prefHeight="38.0" prefWidth="345.0" style="-fx-background-radius: 15;">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="678.0" layoutY="36.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="115.0" text="Qty :">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Spinner fx:id="fldQty" layoutX="754.0" layoutY="36.0" prefHeight="38.0" prefWidth="126.0" style="-fx-border-radius: 15;" />
+                  <JFXButton contentDisplay="CENTER" layoutX="1309.0" layoutY="34.0" onAction="#btnUpdateAction" prefHeight="55.0" prefWidth="184.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Update" textFill="WHITE">
+                     <graphic>
+                        <AnchorPane>
+                           <children>
+                              <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 85;">
+                                 <image>
+                                    <Image url="@image/update.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <padding>
+                        <Insets right="60.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton contentDisplay="CENTER" layoutX="1056.0" layoutY="34.0" onAction="#btnClearAction" prefHeight="55.0" prefWidth="186.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Clear" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 70;">
+                           <image>
+                              <Image url="@image/clear.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <padding>
+                        <Insets right="60.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <Rectangle arcHeight="5.0" arcWidth="15.0" height="1.0" layoutX="30.0" layoutY="250.0" stroke="BLACK" strokeType="OUTSIDE" style="-fx-arc-height: 10; -fx-translate-y: -10;" width="1534.0" />
+            <JFXTreeTableView fx:id="table" layoutX="22.0" layoutY="302.0" opacity="0.7" prefHeight="499.0" prefWidth="1535.0" style="-fx-background-radius: 20;" styleClass="table" stylesheets="@../Style/d.css">
+               <columns>
+                  <TreeTableColumn fx:id="colCode" prefWidth="152.33334350585938" styleClass="column" text="Item Code" />
+                  <TreeTableColumn fx:id="colDescription" prefWidth="327.0" styleClass="column" text="Description" />
+                  <TreeTableColumn fx:id="colQty" prefWidth="124.0" styleClass="column" text="Qty" />
+                  <TreeTableColumn fx:id="colType" prefWidth="186.33331298828125" styleClass="column" text="Type" />
+                  <TreeTableColumn fx:id="colSize" prefWidth="207.66668701171875" styleClass="column" text="Size" />
+                  <TreeTableColumn fx:id="colUnitePrice" prefWidth="193.99993896484375" styleClass="column" text="Unite Price" />
+                  <TreeTableColumn fx:id="colDiscount" prefWidth="191.666748046875" styleClass="column" text="Discount" />
+                  <TreeTableColumn fx:id="colAmount" prefWidth="149.0" styleClass="column" text="Amount" />
+               </columns>
+            </JFXTreeTableView>
+            <AnchorPane layoutX="41.0" layoutY="821.0">
+               <children>
+                  <Label layoutX="69.0" layoutY="11.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="140.0" text="Total :">
+                     <font>
+                        <Font name="System Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lblTotal" layoutX="173.0" layoutY="11.0" prefHeight="38.0" prefWidth="220.0" style="-fx-background-radius: 15; -fx-border-radius: 15; -fx-background-color: white; -fx-border-color: #bdc3c7;">
+                     <font>
+                        <Font name="System Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <JFXButton contentDisplay="CENTER" layoutX="1264.0" onAction="#btnPlaceReturnAction" prefHeight="55.0" prefWidth="205.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Place Return" textFill="WHITE">
+                     <graphic>
+                        <AnchorPane>
+                           <children>
+                              <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 100;">
+                                 <image>
+                                    <Image url="@image/create-order.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                     </graphic>
+                     <font>
+                        <Font name="System Bold" size="23.0" />
+                     </font>
+                     <padding>
+                        <Insets right="60.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

@@ -1,0 +1,13 @@
+
+g	java:S112?"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8”Á‹¨³1
+g	java:S112r"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8½Èş´³1
+l
+java:S2095H"OUse try-with-resources or close this "PreparedStatement" in a "finally" clause.(Ó§Æ¢8¸Á‹¨³1
+8
+java:S3626c"Remove this redundant jump.(ûÁİ…8ÓÉş´³1
+B
+java:S1128"%Remove this unused import 'DTO.User'.(úàêã8ÎÁ‹¨³1
+M
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8ÎÁ‹¨³1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ÎÁ‹¨³1

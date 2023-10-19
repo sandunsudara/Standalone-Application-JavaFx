@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
+
+
+.MainTitel{
+    -fx-font-family: 'Kanit', sans-serif;
+}
+
+.lbltext{
+    -fx-font-family: 'Kanit', sans-serif;
+}
+
+.table .column{
+    -fx-font-weight:bold;
+    -fx-font-size:20px;
+}

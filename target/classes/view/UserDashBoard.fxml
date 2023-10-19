@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="dashboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1700.0" style="-fx-background-image: url(/view/image/MainBack.png);" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.UserDashBoardController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1580.0" style="-fx-background-radius: 20, 20; -fx-background-image: url(/view/image/Rectangle.png);" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="15.0" height="5.0" layoutX="22.0" layoutY="105.0" stroke="BLACK" strokeType="OUTSIDE" style="-fx-arc-height: 10;" width="1534.0" />
+            <JFXButton layoutX="1385.0" layoutY="23.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#btnLogOutAction" prefHeight="44.0" prefWidth="147.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="LogOut" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </JFXButton>
+            <Label fx:id="lblTime" layoutX="34.0" layoutY="30.0" text="HH-MM">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label fx:id="lblDate" layoutX="34.0" layoutY="62.0" text="DD - MM -YYYY">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="1374.0" layoutY="65.0" text="User Dashboard">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="50.0" layoutY="176.0">
+               <children>
+                  <JFXButton alignment="TOP_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="174.0" onAction="#btnSuppliersAction" prefHeight="223.0" prefWidth="300.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Suppliers" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="111.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 0; -fx-translate-y: 100;">
+                           <image>
+                              <Image url="@image/supplier.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER_LEFT" contentDisplay="CENTER" graphicTextGap="0.0" onAction="#btnOrdersAction" prefHeight="153.0" prefWidth="656.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Orders" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="96.0" />
+                     </font>
+                     <graphic>
+                        <ImageView accessibleRole="CHECK_BOX" fitHeight="137.0" fitWidth="106.0" pickOnBounds="true" preserveRatio="true" smooth="false" style="-fx-translate-x: 280;">
+                           <image>
+                              <Image url="@image/order.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="DEFAULT" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="90.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutY="442.0" onAction="#btnOrderDetailsAction" prefHeight="223.0" prefWidth="300.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Order Details" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="111.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 0; -fx-translate-y: 100;">
+                           <image>
+                              <Image url="@image/purchase-order.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="356.0" layoutY="174.0" onAction="#btnInventoryAction" prefHeight="223.0" prefWidth="300.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Inventory" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="111.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 0; -fx-translate-y: 100;">
+                           <image>
+                              <Image url="@image/inventory.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </JFXButton>
+                  <JFXButton alignment="TOP_CENTER" contentDisplay="CENTER" graphicTextGap="0.0" layoutX="356.0" layoutY="442.0" onAction="#btnSalesReturnAction" prefHeight="223.0" prefWidth="300.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Sales Return" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="111.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 0; -fx-translate-y: 100;">
+                           <image>
+                              <Image url="@image/return.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

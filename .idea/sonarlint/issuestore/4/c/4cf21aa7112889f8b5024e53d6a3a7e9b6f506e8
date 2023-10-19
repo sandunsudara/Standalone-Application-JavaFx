@@ -1,0 +1,13 @@
+
+ž
+java:S1186K"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÇÃúñ8Ä³‹ù³1
+£
+java:S1186X"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(öÆó­øÿÿÿÿ8Ä³‹ù³1
+£
+java:S1186]"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ÿ•´èþÿÿÿÿ8Ä³‹ù³1
+£
+java:S1186b"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(âÑá¶ÿÿÿÿÿ8Ä³‹ù³1
+ˆ
+java:S1130P"lRemove the declaration of thrown exception 'java.io.IOException', as it cannot be thrown from method's body.(ð÷‘;8É½Œù³1
+U
+java:S1128"3Remove this unused import 'javafx.fxml.FXMLLoader'.(À‡ô³úÿÿÿÿ8Ê½Œù³1
