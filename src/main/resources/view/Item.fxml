@@ -80,24 +80,19 @@
                         <Font name="System Bold" size="22.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="fldItemCode" layoutX="197.0" style="-fx-background-radius: 15;">
-                     <font>
-                        <Font name="System Bold" size="17.0" />
-                     </font>
-                  </TextField>
                   <TextField fx:id="fldDescription" layoutX="197.0" layoutY="133.0" prefHeight="38.0" prefWidth="345.0" style="-fx-background-radius: 15;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="supplierSelectById" layoutX="197.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="129.0" style="-fx-background-radius: 15;" />
-                  <ComboBox fx:id="supplierSelectByName" layoutX="354.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="186.0" style="-fx-background-radius: 15;" />
+                  <ComboBox fx:id="supplierSelectById" layoutX="197.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="129.0" style="-fx-background-radius: 15;" styleClass="comboBox" stylesheets="@../Style/d.css" />
+                  <ComboBox fx:id="supplierSelectByName" layoutX="354.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="186.0" style="-fx-background-radius: 15;" styleClass="comboBox" stylesheets="@../Style/d.css" />
                   <TextField fx:id="fldBuyPrice" layoutX="862.0" prefHeight="38.0" prefWidth="190.0" style="-fx-background-radius: 15;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="selectType" layoutX="862.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" style="-fx-background-radius: 15;" />
+                  <ComboBox fx:id="selectType" layoutX="862.0" layoutY="63.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" style="-fx-background-radius: 15;" styleClass="comboBox" stylesheets="@../Style/d.css" />
                   <TextField fx:id="fldQty" layoutX="862.0" layoutY="133.0" prefHeight="38.0" prefWidth="139.0" style="-fx-background-radius: 15;">
                      <font>
                         <Font name="System Bold" size="17.0" />
@@ -108,32 +103,22 @@
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="fldAddQty" layoutX="1287.0" layoutY="133.0" prefHeight="38.0" prefWidth="139.0" style="-fx-background-radius: 15;">
+                  <TextField fx:id="fldAddQty" disable="true" layoutX="1287.0" layoutY="133.0" prefHeight="38.0" prefWidth="139.0" style="-fx-background-radius: 15;">
                      <font>
                         <Font name="System Bold" size="17.0" />
                      </font>
                   </TextField>
-                  <ComboBox fx:id="selectSize" layoutX="1287.0" layoutY="67.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" style="-fx-background-radius: 15;" />
+                  <ComboBox fx:id="selectSize" layoutX="1287.0" layoutY="67.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="38.0" prefWidth="190.0" style="-fx-background-radius: 15;" styleClass="comboBox" stylesheets="@../Style/d.css" />
+                  <Label fx:id="lblid" layoutX="197.0" prefHeight="38.0" prefWidth="174.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #584E4E; -fx-border-radius: 15; -fx-alignment: center;">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
             <AnchorPane layoutX="22.0" layoutY="347.0">
                <children>
                   <Rectangle arcHeight="5.0" arcWidth="15.0" height="1.0" stroke="BLACK" strokeType="OUTSIDE" style="-fx-arc-height: 10; -fx-translate-y: -10;" width="1534.0" />
-                  <JFXButton contentDisplay="CENTER" layoutX="321.0" layoutY="10.0" onAction="#btnSearchAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Search" textFill="WHITE">
-                     <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 80;">
-                           <image>
-                              <Image url="@image/search.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                     <font>
-                        <Font name="System Bold" size="20.0" />
-                     </font>
-                     <padding>
-                        <Insets right="70.0" />
-                     </padding>
-                  </JFXButton>
                   <JFXButton contentDisplay="CENTER" layoutX="697.0" layoutY="10.0" onAction="#btnClearAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Clear" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="42.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 70;">
@@ -149,7 +134,7 @@
                         <Insets right="60.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton contentDisplay="CENTER" layoutX="898.0" layoutY="10.0" onAction="#btnAddAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Add" textFill="WHITE">
+                  <JFXButton fx:id="btnAdd" contentDisplay="CENTER" layoutX="898.0" layoutY="10.0" onAction="#btnAddAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Add" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 70;">
                            <image>
@@ -164,7 +149,7 @@
                         <Insets right="60.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton contentDisplay="CENTER" layoutX="1099.0" layoutY="10.0" onAction="#btnAddQtyAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Add Qty" textFill="WHITE">
+                  <JFXButton fx:id="btnAddQty" contentDisplay="CENTER" layoutX="1099.0" layoutY="10.0" onAction="#btnAddQtyAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Add Qty" textFill="WHITE">
                      <graphic>
                         <ImageView fitHeight="50.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 80;">
                            <image>
@@ -179,9 +164,9 @@
                         <Insets right="60.0" />
                      </padding>
                   </JFXButton>
-                  <JFXButton contentDisplay="CENTER" layoutX="1320.0" layoutY="10.0" onAction="#btnSaveAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Save" textFill="WHITE">
+                  <JFXButton contentDisplay="CENTER" layoutX="1320.0" layoutY="10.0" onAction="#btnSaveAction" prefHeight="46.0" prefWidth="162.0" style="-fx-background-color: black; -fx-background-radius: 15;" text="Update" textFill="WHITE">
                      <graphic>
-                        <ImageView fitHeight="50.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 80;">
+                        <ImageView fitHeight="50.0" fitWidth="46.0" pickOnBounds="true" preserveRatio="true" style="-fx-translate-x: 70;">
                            <image>
                               <Image url="@image/save.png" />
                            </image>
@@ -191,17 +176,17 @@
                         <Font name="System Bold" size="20.0" />
                      </font>
                      <padding>
-                        <Insets right="70.0" />
+                        <Insets right="60.0" />
                      </padding>
                   </JFXButton>
-                  <TextField fx:id="fldSearch" layoutX="10.0" layoutY="10.0" opacity="0.85" prefHeight="44.0" prefWidth="297.0" promptText="Enter Code  or Description ..." style="-fx-background-radius: 15;">
+                  <TextField fx:id="fldSearch" layoutX="10.0" layoutY="10.0" opacity="0.85" prefHeight="44.0" prefWidth="360.0" promptText="Enter Code  or Description ..." style="-fx-background-radius: 15;">
                      <font>
                         <Font name="System Bold" size="20.0" />
                      </font>
                   </TextField>
                </children>
             </AnchorPane>
-            <JFXTreeTableView layoutX="22.0" layoutY="430.0" opacity="0.7" prefHeight="455.0" prefWidth="1535.0" style="-fx-background-radius: 20;" styleClass="table" stylesheets="@../Style/d.css">
+            <JFXTreeTableView fx:id="itemTable" layoutX="22.0" layoutY="430.0" opacity="0.7" prefHeight="455.0" prefWidth="1535.0" style="-fx-background-radius: 20;" styleClass="table" stylesheets="@../Style/d.css">
                <columns>
                   <TreeTableColumn fx:id="colCode" prefWidth="114.33331298828125" styleClass="column" text="Code" />
                   <TreeTableColumn fx:id="colDescription" prefWidth="412.66668701171875" styleClass="column" text="Description" />

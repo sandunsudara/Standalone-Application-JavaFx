@@ -23,6 +23,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import model.tableModel.SupplierTm;
+import model.tableModel.SuppliesTm;
 
 import java.io.IOException;
 import java.net.URL;
@@ -97,7 +98,7 @@ public class SupplierController implements Initializable {
     private JFXTreeTableView<SupplierTm> supplierTable;
 
     @FXML
-    private JFXTreeTableView<?> suppliesTables;
+    private JFXTreeTableView<SuppliesTm> suppliesTables;
 
     @FXML
     void btnAddAction(ActionEvent event) {
@@ -149,11 +150,6 @@ public class SupplierController implements Initializable {
     @FXML
     void btnClearAction(ActionEvent event) {
         clearFields();
-    }
-
-    @FXML
-    void btnSearchAction(ActionEvent event) {
-
     }
 
     @FXML
@@ -286,6 +282,23 @@ public class SupplierController implements Initializable {
         fldEmail.setText(newValue.getValue().getEmail());
         fldCompany.setText(newValue.getValue().getCompany());
         fldContact.setText(newValue.getValue().getContact());
+
+        try {
+            ObservableList<SuppliesTm> list=FXCollections.observableArrayList();
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement pstm = connection.prepareStatement("SELECT itemId , description , qty FROM item WHERE supplierId='" + lblId.getText() + "';");
+            ResultSet resultSet = pstm.executeQuery();
+            while (resultSet.next()){
+                list.add(new SuppliesTm(resultSet.getString(1), resultSet.getString(2) , resultSet.getInt(3)));
+            }
+            TreeItem<SuppliesTm> treeI = new RecursiveTreeItem<>(list, RecursiveTreeObject::getChildren);
+            suppliesTables.setRoot(treeI);
+            suppliesTables.setShowRoot(false);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -297,6 +310,9 @@ public class SupplierController implements Initializable {
         colCompany.setCellValueFactory(new TreeItemPropertyValueFactory<>("company"));
         colContact.setCellValueFactory(new TreeItemPropertyValueFactory<>("contact"));
         colOption.setCellValueFactory(new TreeItemPropertyValueFactory<>("btn"));
+        colItemCode.setCellValueFactory(new TreeItemPropertyValueFactory<>("itemId"));
+        colDescription.setCellValueFactory(new TreeItemPropertyValueFactory<>("description"));
+        colQty.setCellValueFactory(new TreeItemPropertyValueFactory<>("qty"));
         generateId();
         loadTableSupplier();
 

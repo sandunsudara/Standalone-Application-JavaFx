@@ -16,3 +16,8 @@
     -fx-font-size:20px;
     -fx-alignment: center;
 }
+
+.comboBox{
+    -fx-font-size: 20;
+    -fx-font-weight: bold;
+}
