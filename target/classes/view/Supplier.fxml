@@ -47,11 +47,6 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="fldSupplierId" layoutX="250.0" layoutY="150.0" style="-fx-background-radius: 15;">
-               <font>
-                  <Font name="System Bold" size="17.0" />
-               </font>
-            </TextField>
             <TextField fx:id="fldEmail" layoutX="250.0" layoutY="242.0" prefHeight="38.0" prefWidth="373.0" style="-fx-background-radius: 15;">
                <font>
                   <Font name="System Bold" size="17.0" />
@@ -72,7 +67,7 @@
                   <Font name="System Bold" size="22.0" />
                </font>
             </Label>
-            <TextField fx:id="fldContact" layoutX="250.0" layoutY="334.0" prefHeight="38.0" prefWidth="345.0" style="-fx-background-radius: 15;">
+            <TextField fx:id="fldContact" layoutX="250.0" layoutY="334.0" onKeyPressed="#keyPressedOnContact" prefHeight="38.0" prefWidth="275.0" style="-fx-background-radius: 15;">
                <font>
                   <Font name="System Bold" size="17.0" />
                </font>
@@ -148,13 +143,14 @@
                </padding>
             </JFXButton>
             <Rectangle arcHeight="5.0" arcWidth="15.0" height="1.0" layoutX="13.0" layoutY="482.0" stroke="BLACK" strokeType="OUTSIDE" style="-fx-arc-height: 10; -fx-translate-y: -10;" width="1534.0" />
-            <JFXTreeTableView fx:id="supplierTable" layoutX="22.0" layoutY="508.0" opacity="0.7" prefHeight="382.0" prefWidth="1535.0" style="-fx-background-radius: 20;" styleClass="table" stylesheets="@../Style/d.css">
+            <JFXTreeTableView fx:id="supplierTable" layoutX="22.0" layoutY="498.0" opacity="0.7" prefHeight="382.0" prefWidth="1535.0" style="-fx-background-radius: 20;" styleClass="table" stylesheets="@../Style/d.css">
                <columns>
-                  <TreeTableColumn fx:id="colId" prefWidth="240.33331298828125" styleClass="column" text="Id" />
-                  <TreeTableColumn fx:id="colName" prefWidth="326.6666259765625" styleClass="column" text="Name" />
-                  <TreeTableColumn fx:id="colAddress" prefWidth="529.3333740234375" styleClass="column" text="Address" />
-                  <TreeTableColumn fx:id="colContact" prefWidth="282.6666259765625" styleClass="column" text="Contact" />
-                  <TreeTableColumn fx:id="colOption" prefWidth="156.0" styleClass="column" text="Option" />
+                  <TreeTableColumn fx:id="colId" prefWidth="171.0" styleClass="column" text="Id" />
+                  <TreeTableColumn fx:id="colName" prefWidth="295.0" styleClass="column" text="Name" />
+                  <TreeTableColumn fx:id="colEmail" prefWidth="380.0" styleClass="column" text="Email" />
+                  <TreeTableColumn fx:id="colCompany" prefWidth="265.0" styleClass="column" text="Company" />
+                  <TreeTableColumn fx:id="colContact" prefWidth="286.0" styleClass="column" text="Contact" />
+                  <TreeTableColumn fx:id="colOption" prefWidth="137.0" styleClass="column" text="Option" />
                </columns>
             </JFXTreeTableView>
             <AnchorPane layoutX="909.0" layoutY="125.0" prefHeight="326.0" prefWidth="650.0" style="-fx-background-color: #383636; -fx-background-radius: 15;">
@@ -173,6 +169,16 @@
                   </Label>
                </children>
             </AnchorPane>
+            <Label fx:id="lblId" layoutX="250.0" layoutY="151.0" prefHeight="38.0" prefWidth="140.0" style="-fx-background-color: white; -fx-background-radius: 15; -fx-border-color: #584E4E; -fx-border-radius: 15; -fx-alignment: center;" text="Label">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="wrongImg" fitHeight="39.0" fitWidth="51.0" layoutX="535.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/wrong.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </center>

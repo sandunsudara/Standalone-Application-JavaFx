@@ -1,7 +1,6 @@
 package controller;
 
 import DB.DBConnection;
-import DTO.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,8 +16,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class LogingFormController implements Initializable {
@@ -68,26 +65,7 @@ public class LogingFormController implements Initializable {
 
     @FXML
     void loginBtnAction(ActionEvent event) throws SQLException, ClassNotFoundException, IOException {
-        Connection connection = DBConnection.getInstance().getConnection();
-        PreparedStatement pstm=connection.prepareStatement("SELECT password , type FROM user WHERE username='"+fldUsername.getText()+"';");
-        ResultSet resultSet = pstm.executeQuery();
-        if(resultSet.next()){
-            if (fldShowPassword.getText().equals(resultSet.getString(1)) || fldPassword.getText().equals(resultSet.getString(1))){
-                Stage stage= (Stage) loginFromBorder.getScene().getWindow();
-                if (resultSet.getString(2).equals("Admin")) {
-                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/AdminDashBoard.fxml"))));
-                }
-                else {
-                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserDashBoard.fxml"))));
-                }
-            }
-            else {
-                new Alert(Alert.AlertType.ERROR,"Incorrect Password ...!").show();
-            }
-        }
-        else {
-            new Alert(Alert.AlertType.ERROR,"Username Not Found ...!").show();
-        }
+        loginAction();
     }
 
     @FXML
@@ -116,10 +94,39 @@ public class LogingFormController implements Initializable {
         stage.show();
     }
 
+
+    private void loginAction() throws SQLException, ClassNotFoundException, IOException {
+        Connection connection = DBConnection.getInstance().getConnection();
+        PreparedStatement pstm=connection.prepareStatement("SELECT password , type FROM user WHERE username='"+fldUsername.getText()+"';");
+        ResultSet resultSet = pstm.executeQuery();
+        if(resultSet.next()){
+            if (fldShowPassword.getText().equals(resultSet.getString(1)) || fldPassword.getText().equals(resultSet.getString(1))){
+                Stage stage= (Stage) loginFromBorder.getScene().getWindow();
+                if (resultSet.getString(2).equals("Admin")) {
+                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/AdminDashBoard.fxml"))));
+                }
+                else {
+                    stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("../view/UserDashBoard.fxml"))));
+                }
+            }
+            else {
+                new Alert(Alert.AlertType.ERROR,"Incorrect Password ...!").show();
+            }
+        }
+        else {
+            new Alert(Alert.AlertType.ERROR,"Username Not Found ...!").show();
+        }
+
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         this.showPasswordAction(null);
 
     }
 
+    public void enterKey(javafx.scene.input.KeyEvent keyEvent) throws SQLException, IOException, ClassNotFoundException {
+        loginAction();
+        System.out.println("dsdfs");
+    }
 }

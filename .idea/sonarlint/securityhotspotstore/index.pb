@@ -3,8 +3,6 @@ R
 "src/main/java/DB/DBConnection.java,b\3\b3dd95a9b2dd999b808eba49a73a9d8907198036
 b
 2src/main/java/controller/LogingFormController.java,1\6\16565137fd9a22a7e7866c2791e73e2e63240d64
-Q
-!src/main/java/AppInitializer.java,d\8\d8724d5ff68b00b1e87def6fac487d03194f989f
 f
 6src/main/java/controller/FrogetPasswordController.java,b\2\b2d1a5ffbd970a060feadc2a36edf8180fc26d22
 U
@@ -23,9 +21,6 @@ f
 6src/main/java/controller/AdminDashBoardController.java,b\8\b8ffe2000c632d28f6ecd62006a32de98cae4ab6
 `
 0src/main/java/controller/EmployerController.java,b\9\b954606eb32aaecd7c98b6d8eef46071111d21e0
-:
-
-.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
 d
 4src/main/java/controller/OrderDetailsController.java,b\9\b9d715702b1825dc61553932391b1496805e3731
 `
@@ -38,3 +33,7 @@ e
 mvnw.cmd,1\f\1f1763f358c257ea3515417352b82b0165647ad1
 \
 ,src/main/java/controller/ItemController.java,c\5\c5bc9c0b869017cf15f321ad82218629880e2d31
+J
+Standalone-Application.iml,a\5\a5a168cf46c55d6567b16feabf9a63ed4f78712b
+Q
+!src/main/java/AppInitializer.java,d\8\d8724d5ff68b00b1e87def6fac487d03194f989f
